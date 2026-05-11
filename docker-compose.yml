@@ -6,6 +6,8 @@ services:
       # POSTGRES_DB intentionally omitted — let Odoo create and manage databases via web UI
       POSTGRES_USER: ${POSTGRES_USER:-odoo}
       POSTGRES_PASSWORD: ${POSTGRES_PASSWORD:?POSTGRES_PASSWORD is required}
+    ports:
+      - "5433:5432"
     volumes:
       - db_data:/var/lib/postgresql/data
     networks:
